@@ -13,14 +13,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout do repositório que acionou o CD
-      uses: actions/checkout@v4
-      with:
-        repository: ${{ github.event.inputs.repo_name }}
-        token: ${{ secrets.REPO_PAT }}   # Use seu PAT aqui hidcwchcwdvsucdwbhdwchcsbvc\ssbschjdssdbhshbhbdcsbhjhjdhjewui
-        ref: master                     # Ajuste para 'main' se necessário
+      - name: Checkout do repositório que acionou o CD
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.event.inputs.repo_name }}
+          token: ${{ secrets.REPO_PAT }}
+          ref: main   # ajuste para master se necessário
 
-    - name: Simular Deploy
-      run: |
-        echo "Realizando deploy do repositório ${{ github.event.inputs.repo_name }}..."
-        echo "Deploy realizado com sucesso!"
+      - name: Simular Deploy
+        run: |
+          echo "Realizando deploy do repositório ${{ github.event.inputs.repo_name }}..."
+          echo "Deploy realizado com sucesso!"
