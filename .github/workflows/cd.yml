@@ -1,0 +1,26 @@
+name: CD PHP Login
+
+on:
+  workflow_dispatch:
+    inputs:
+      repo_name:
+        description: 'Nome do repositório que acionou o CD'
+        required: true
+        default: 'Pgabriel2605/logiin-php'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout do repositório que acionou o CD
+      uses: actions/checkout@v4
+      with:
+        repository: ${{ github.event.inputs.repo_name }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+        ref: master
+
+    - name: Simular Deploy
+      run: |
+        echo "Realizando deploy do repositório ${{ github.event.inputs.repo_name }}..."
+        echo "Deploy realizado com sucesso!"
