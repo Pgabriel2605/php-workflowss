@@ -17,8 +17,8 @@ jobs:
       uses: actions/checkout@v4
       with:
         repository: ${{ github.event.inputs.repo_name }}
-        token: ${{ secrets.REPO_PAT }}
-        ref: master
+        token: ${{ secrets.REPO_PAT }}   # Use seu PAT aqui hidcwchcwdvsucdwbhdwchcsbvc\ssbschjdssdbhshbhbdcsbhjhjdhjewui
+        ref: master                     # Ajuste para 'main' se necessário
 
     - name: Simular Deploy
       run: |
